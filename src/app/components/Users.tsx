@@ -21,7 +21,7 @@ export default function UsersPage() {
         if (!res.ok) throw new Error('فشل تحميل البيانات');
         const data = await res.json();
         setUsers(data);
-      } catch (err) {
+      } catch {
         setError('حدث خطأ أثناء تحميل المستخدمين');
       }
     }

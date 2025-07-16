@@ -12,7 +12,7 @@ export async function GET() {
       },
     });
     return NextResponse.json(users);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'فشل جلب المستخدمين' }, { status: 500 });
   }
 }
