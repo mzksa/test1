@@ -1,0 +1,23 @@
+// مصدر البيانات: SQLite
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// توليد Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// نموذج المستخدم
+model User {
+  id        Int     @id @default(autoincrement())
+  username  String  @unique
+  password  String
+
+  // معلومات إضافية للمستخدم
+  name      String? // الاسم الكامل (اختياري)
+  age       Int?    // العمر (اختياري)
+  idNumber  String? // رقم الهوية (اختياري)
+  phone     String? // رقم الجوال (اختياري)
+}
